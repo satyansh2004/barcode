@@ -35,3 +35,22 @@ donwload.addEventListener("click", () => {
 
     URL.revokeObjectURL(url);
 })
+
+window.addEventListener("load", () => {
+    const footer = document.body.querySelector("footer");
+
+    if (footer && footer.innerHTML.includes("Satyansh")) {
+        console.log(footer.innerHTML);
+    } else {
+        document.body.innerHTML = "";
+
+        const error = document.createElement("div");
+        error.textContent = "Error: Website Has been Tempered";
+        error.style.color = "red";
+        error.style.fontSize = "1.5rem";
+        error.style.textAlign = "center";
+        error.style.marginTop = "50px";
+
+        document.body.appendChild(error);
+    }
+});
